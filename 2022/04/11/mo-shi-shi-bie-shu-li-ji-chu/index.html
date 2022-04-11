@@ -4,35 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="PTA甲级练习, 理想国的糕">
-    <meta name="description" content="测试中文名是否正常
-
-作为备战机考的算法笔记~💖
-
-TODO List
-
-
-题号
-难度
-考察点
-
-
-
-PTA1110
-🎈🎈
-二叉树（其实也不难，但是确实忘得差不多了~）
-
-
-PTA1098
-🎈
-插入排序&amp;amp;堆排序
-
-
-
-
-
-
-">
+    <meta name="keywords" content="模式识别——数理基础, 理想国的糕">
+    <meta name="description" content="1. 模式识别的主要方法
+数据聚类：用某种相似性方法将原始数据组织成有意义的数据集合（非监督）
+统计分类：概念驱动，基于概率统计模型得到各个类别特征向量的分布（有监督）
+结构模式识别：通过考虑识别对象各个部分之间的联系来达到识别分类的目的,">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -44,7 +20,7 @@ PTA1098
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>PTA甲级练习 | 理想国的糕</title>
+    <title>模式识别——数理基础 | 理想国的糕</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -274,12 +250,12 @@ PTA1098
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">PTA甲级练习</h1>
+                    <h1 class="description center-align post-title">模式识别——数理基础</h1>
                 </div>
             </div>
         </div>
@@ -401,14 +377,31 @@ PTA1098
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vlog%E6%97%A5%E5%B8%B8/">
-                                <span class="chip bg-color">vlog日常</span>
+                            <a href="/tags/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/">
+                                <span class="chip bg-color">模式识别</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                                <span class="chip bg-color">线性代数</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/">
+                                <span class="chip bg-color">统计分析</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/AI/" class="post-category">
+                                AI
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -417,7 +410,7 @@ PTA1098
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-28
+                    2022-04-11
                 </div>
                 
 
@@ -426,7 +419,7 @@ PTA1098
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    496
+                    692
                 </div>
                 
 
@@ -446,106 +439,74 @@ PTA1098
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>测试中文名是否正常</strong></p>
-<blockquote>
-<p>作为备战机考的算法笔记~💖</p>
-</blockquote>
-<h2 id="TODO-List"><a href="#TODO-List" class="headerlink" title="TODO List"></a>TODO List</h2><table>
-<thead>
-<tr>
-<th>题号</th>
-<th>难度</th>
-<th>考察点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a target="_blank" rel="noopener" href="https://pintia.cn/problem-sets/994805342720868352/problems/994805359372255232">PTA1110</a></td>
-<td>🎈🎈</td>
-<td>二叉树（其实也不难，但是确实忘得差不多了~）</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://pintia.cn/problem-sets/994805342720868352/problems/994805368847187968">PTA1098</a></td>
-<td>🎈</td>
-<td>插入排序&amp;堆排序</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>[TOC]</p>
-<h2 id="一、字符串处理"><a href="#一、字符串处理" class="headerlink" title="一、字符串处理"></a>一、字符串处理</h2><h3 id="1-1知识点（C-库函数）"><a href="#1-1知识点（C-库函数）" class="headerlink" title="1.1知识点（C++库函数）"></a>1.1知识点（C++库函数）</h3><ul>
-<li><p>string子串：</p>
-<p><font color='#9ACD32'>string str</font></p>
-
-<p><font color='#9ACD32'>string str1=str.substr(pos,len);</font></p>
-默认不加len返回的是从pos位置开始一直到字符串末尾的子串</li>
-<li><p>string 的find函数：</p>
-<p><font color='#9ACD32'>int pos=str.find("s")</font></p>
-
-<p>返回的是字符”s”所在下标，如果没有，则返回</p>
-<p><font color='#9ACD32'>str.npos;</font></p></li>
-<li><p>string转int</p>
+                <h1 id="1-模式识别的主要方法"><a href="#1-模式识别的主要方法" class="headerlink" title="1. 模式识别的主要方法"></a>1. 模式识别的主要方法</h1><ul>
+<li>数据聚类：用某种<mark>相似性方法</mark>将原始数据组织成有意义的数据集合（非监督）</li>
+<li>统计分类：<mark>概念驱动</mark>，基于概率统计模型得到各个类别特征向量的分布（有监督）</li>
+<li>结构模式识别：通过考虑<mark>识别对象各个部分之间的联系</mark>来达到识别分类的目的,<mark>句法模式识别</mark></li>
+<li>神经网络：（监督、非监督）</li>
+</ul>
+<p>模式识别系统基本构成：</p>
+<p><img src="D:\MyBlog\blog\source_posts\pic\image-20220411200055663.png" alt="image-20220411200055663"></p>
 <ul>
-<li>补充：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Vic___/article/details/9324897">int-&gt;float   int-&gt;long long 等</a>，万能的stream<ul>
-<li>stoi:转int</li>
-<li>stof:转float</li>
-<li>stol:转long</li>
+<li>预处理：去除噪声，数据复原，提取有用信息等</li>
+<li>特征提取和选择：对原始数据进行变换，得到最能反映本质的特征<ul>
+<li>测量空间：原始数据组成的空间</li>
+<li>特征空间：分类识别赖以进行的空间</li>
+<li>模式表示：维数较高的测量空间-&gt;维数较低的特征空间</li>
 </ul>
 </li>
-<li></li>
+<li>分类决策：在特征空间用模式识别方法把被识别对象归于某一类别【基本做法：<font color='grey'>在样本训练集基础上确定某个判决规则，使得按这种规则对被识别对象进行分类所造成的错误识别率最小或引起的损失最小</font>】</li>
 </ul>
-</li>
-<li><p>int转string</p>
-<p><font color='#9ACD32'>int a=10;
-<p><font color='#9ACD32'>to_string(a)//返回一个字符串“10”</font></p></li>
+<h1 id="2-预备知识"><a href="#2-预备知识" class="headerlink" title="2. 预备知识"></a>2. 预备知识</h1><h2 id="2-1-概率统计"><a href="#2-1-概率统计" class="headerlink" title="2.1 概率统计"></a>2.1 概率统计</h2><p>1、随机向量</p>
+<p>如果一个对象的随机观察值为，它可以构成一个n维特<br>$$<br>{x_1,x_2,……x_n}<br>$$<br>征向量x，即：<br>$$<br>x={x_1,x_2,……x_n}^T<br>$$<br>一个特征可以看作n维空间中的向量或点，此空间称为模式的特征空间<br>$$<br>R^n<br>$$</p>
+<ul>
+<li>期望</li>
 </ul>
+<p>$$<br>E(x)=(E(x_1),E(x_2),……E(x_n))^T<br>$$</p>
 <ul>
-<li><p>string的子串</p>
-<p><font color='#9ACD00'>string a="AS YO SD"
-
-  <p><font color='#9ACD32'>a.substr(2);//返回从下标2到最后的一串字符<p><font color='#9ACD32'>a.substr(2,3);//返回从下标2开始长度为3的一串字符，前者超界限报错，后者长度超过字符串长度，则自动截断</li>
+<li>方差</li>
 </ul>
+<p>$$<br>Var(x)=\frac{1}{m}\sum_{i=1}^{n}({x_i-\mu})^2<br>$$</p>
 <ul>
-<li><p>string定位某个字符</p>
-<p><font color='#9ACD32'>string a="ASDEF"
-<p><font color='#9ACD32'>a.find('A');//返回A的位置编号0</font></p></li>
+<li>协方差矩阵</li>
 </ul>
+<p>$$<br>cov(x)=\begin{pmatrix}<br>cov(x_1,x_1)&amp;cov(x_1,x_2)&amp;……&amp;cov(x_1,x_n)\<br>cov(x_2,x_1)&amp;cov(x_2,x_2)&amp;……&amp;cov(x_2,x_n)\<br>……\<br>cov(x_n,x_1)&amp;cov(x_n,x_2)&amp;……&amp;cov(x_n,x_n)\<br>\end{pmatrix}<br>$$</p>
+<p>2、一维正态分布密度函数<br>$$<br>\rho(x)=\frac{1}{\sqrt{2Π}\sigma}exp{\frac{-(x-\mu)^2}{2{\sigma}^2}}<br>$$<br>3、多维正态分布密度函数<br>$$<br>\rho(x)=\frac{1}{\sqrt{2Π}\sqrt{C}}exp{\frac{-(x-\mu)^TC^{-1}{(x-\mu)}}{2}}<br>$$</p>
+<h2 id="2-2-线性代数"><a href="#2-2-线性代数" class="headerlink" title="2.2 线性代数"></a>2.2 线性代数</h2><p>1、向量</p>
+<p>2、内积、点积（1xd）· (1xd)=（1x1）</p>
+<p>3、向量长度（欧几里得范数（1x1））</p>
+<p>4、正交<br>$$<br>x^Ty=0<br>$$</p>
+<p>5、向量之间的夹角</p>
+<p>略</p>
+<p>投影（略）</p>
+<p>6、矩阵：</p>
 <ul>
-<li><p>char型字符判断类型</p>
+<li><p>矩阵乘法</p>
+</li>
+<li><p>矩阵的幂</p>
+</li>
+<li><p>矩阵的转置</p>
+</li>
+<li><p>对称矩阵（方阵）</p>
+</li>
+<li><p>逆矩阵</p>
+</li>
+<li><p>特征向量</p>
+</li>
+<li><p>特征值det(A)=特征值和</p>
+</li>
+<li><p>矩阵的迹tr=对角线元素之和=特征值之和</p>
+</li>
+<li><p>实对称矩阵（每个数都是实数）</p>
+<p>性质</p>
 <ul>
-<li><p>**isalnum()**判断一个字符是否为字母或者数字</p>
-</li>
-<li><p>**isalpha()**判断一个字符是否为字母(A – Z or a – z)</p>
-</li>
-<li><p>**isdigit()**判断一个字符是否为数字</p>
-</li>
+<li>所有特征值都是实数、特征向量都是实向量</li>
+<li>特征值：</li>
 </ul>
-</li>
-<li><p>**isxdigit()**判断一个字符是否为十六进制数字(A – F, a – f, or 0 – 9)</p>
+<p>$$<br>\lambda_1&gt;=\lambda_2&gt;=\lambda_3……\lambda_n<br>$$</p>
 <ul>
-<li>**islower()**判断一个字符是否小写</li>
-<li>**isupper()**判断一个字符是否为大写</li>
-</ul>
-</li>
-<li><p>string字符串的逆转</p>
-<p><strong>reverse(str.begin(),str.end())</strong>:将string类型直接reverse掉</p>
-</li>
-<li><p>转大写、小写——只限于char型</p>
-<p>char ch;</p>
-<p>toupper(ch);</p>
-<p>tolower(ch);</p>
-</li>
-<li><p>字符串的输入输出</p>
-<ul>
-<li><p>sscanf(original_str  ,格式,  需要保存的字符串、数字等)</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lxzh12345/article/details/24122969">【参考链接】</a></p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">sscanf(&quot;123456 &quot;, &quot;%s&quot;, str);&#x2F;&#x2F;将字符串“123456”输入给str
- sscanf(&quot;123456 &quot;, &quot;%4s&quot;, str);&#x2F;&#x2F;取最大长度为4字节的字符串<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li><p>sprintf(需要保存的字符串，格式，原本的字符串或者数字)</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012406177/article/details/70243062">【参考链接】</a></p>
-</li>
+<li>对应的特征向量两两相交</li>
+<li>F=[特征向量1，特征向量2……]nxn是满秩的</li>
 </ul>
 </li>
 </ul>
@@ -575,7 +536,7 @@ PTA1098
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ghy0202.github.io/2022/01/28/pta-jia-ji-lian-xi/">https://ghy0202.github.io/2022/01/28/pta-jia-ji-lian-xi/</a>
+                    <a href="https://ghy0202.github.io/2022/04/11/mo-shi-shi-bie-shu-li-ji-chu/">https://ghy0202.github.io/2022/04/11/mo-shi-shi-bie-shu-li-ji-chu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -613,8 +574,16 @@ PTA1098
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vlog%E6%97%A5%E5%B8%B8/">
-                                    <span class="chip bg-color">vlog日常</span>
+                                <a href="/tags/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/">
+                                    <span class="chip bg-color">模式识别</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                                    <span class="chip bg-color">线性代数</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/">
+                                    <span class="chip bg-color">统计分析</span>
                                 </a>
                             
                         </div>
@@ -1054,17 +1023,18 @@ PTA1098
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/28/pta-jia-ji-mo-ni-1140-1143/">
+                <a href="/2022/04/11/mo-shi-shi-bie-shu-li-ji-chu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="PTA甲级模拟1140-1143">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="模式识别——数理基础">
                         
-                        <span class="card-title">PTA甲级模拟1140-1143</span>
+                        <span class="card-title">模式识别——数理基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1074,13 +1044,75 @@ PTA1098
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-11
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Gao
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI/" class="post-category">
+                                    AI
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/">
+                        <span class="chip bg-color">模式识别</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                        <span class="chip bg-color">线性代数</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">统计分析</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/04/11/suan-fa-kang-fu-xun-lian-03/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="算法康复训练03">
+                        
+                        <span class="card-title">算法康复训练03</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -1092,50 +1124,8 @@ PTA1098
                         <span class="chip bg-color">编程练习</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/01/28/pta-jia-ji-lian-xi/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="PTA甲级练习">
-                        
-                        <span class="card-title">PTA甲级练习</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-28
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Gao
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/vlog%E6%97%A5%E5%B8%B8/">
-                        <span class="chip bg-color">vlog日常</span>
+                    <a href="/tags/%E6%9C%BA%E8%80%83/">
+                        <span class="chip bg-color">机考</span>
                     </a>
                     
                 </div>
