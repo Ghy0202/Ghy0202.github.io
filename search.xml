@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>DL平台开发中期日志</title>
+      <link href="/2022/04/13/dl-ping-tai-kai-fa-zhong-qi-ri-zhi/"/>
+      <url>/2022/04/13/dl-ping-tai-kai-fa-zhong-qi-ri-zhi/</url>
+      
+        <content type="html"><![CDATA[<hr><h1 id="1-Day20-关于Django导入自定义模块报错的问题"><a href="#1-Day20-关于Django导入自定义模块报错的问题" class="headerlink" title="1.Day20:关于Django导入自定义模块报错的问题"></a>1.Day20:关于Django导入自定义模块报错的问题</h1><p>大概是每天抽空跑一下代码叭，看心情加一些功能<del>不知不觉日积月累也做了很多啦~~感觉开发比较简单，提升模型精度比较耗时间一点，各种trick,分享一下前台页面</del></p><p>目前实现的有：</p><ul><li><input checked="" disabled="" type="checkbox"> 简易豆瓣爬虫、数据下载</li><li><input checked="" disabled="" type="checkbox"> 中文分词、情感分析、词性分析</li><li><input checked="" disabled="" type="checkbox"> NLP课程展示（基于b站数据）</li><li><input checked="" disabled="" type="checkbox"> 图像识别（基于Kmeans的图像切割、OpenCV人脸识别&lt;摄像头动态捕捉和静态图像识别&gt;）</li><li><input checked="" disabled="" type="checkbox"> 后端管理员增删改查用户数据</li><li><input checked="" disabled="" type="checkbox"> 前台登陆退出注册</li></ul><p><img src=".%5Cpic%5Cimage-20220413235325198.png" alt="image-20220413235325198"></p><p><img src=".%5Cpic%5Cimage-20220413235003758.png" alt="image-20220413235003758"></p><p><img src=".%5Cpic%5Cimage-20220413235900459.png" alt="image-20220413235900459"></p><p>利用API导入了交流平台模块，真正成熟上线的话会考虑删掉，因为本意是开发之初希望收到用户反馈修改bug</p><p><img src=".%5Cpic%5Cimage-20220413235542970.png" alt="image-20220413235542970"></p><p>遇到的问题是，要把之前复现的模型在Web显示出来，后台很好写，但是耦合的时候 遇到了Django导入模块报错的问题，之前还凑合，但是这部分代码量确实大，必须导入模块否则代码可读性≈0，于是找了好多解决的帖子。</p><p><img src=".%5Cpic%5Cimage-20220413233329464.png" alt="image-20220413233329464"></p><p>试了好几种导入语句都是花式报错，最终解决办法见<a href="https://www.cnblogs.com/VirtualMe/p/13307834.html">此博客</a>，实际上还是导入语句写得不对，Django不识别的问题，不需要去改编译器设置。AK</p><p>接下来的任务：</p><ul><li><input disabled="" type="checkbox"> 前端可视化展示LSTM\RNN\GRU模型实现的ABSC任务</li><li><input disabled="" type="checkbox"> 后端实验信息展示</li><li><input disabled="" type="checkbox"> （想实现后台管理员上传视频前台查收视频的功能）</li><li><input disabled="" type="checkbox"> 想实现 用户数据的展示（折线图等）</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> AI </category>
+          
+          <category> 项目开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web </tag>
+            
+            <tag> Django </tag>
+            
+            <tag> Pytorch </tag>
+            
+            <tag> ABSC/ACOS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>算法康复训练04</title>
       <link href="/2022/04/13/suan-fa-kang-fu-xun-lian-04/"/>
       <url>/2022/04/13/suan-fa-kang-fu-xun-lian-04/</url>
@@ -62,7 +95,7 @@
       <link href="/2022/04/11/mo-shi-shi-bie-shu-li-ji-chu/"/>
       <url>/2022/04/11/mo-shi-shi-bie-shu-li-ji-chu/</url>
       
-        <content type="html"><![CDATA[<h1 id="1-模式识别的主要方法"><a href="#1-模式识别的主要方法" class="headerlink" title="1. 模式识别的主要方法"></a>1. 模式识别的主要方法</h1><ul><li>数据聚类：用某种<mark>相似性方法</mark>将原始数据组织成有意义的数据集合（非监督）</li><li>统计分类：<mark>概念驱动</mark>，基于概率统计模型得到各个类别特征向量的分布（有监督）</li><li>结构模式识别：通过考虑<mark>识别对象各个部分之间的联系</mark>来达到识别分类的目的,<mark>句法模式识别</mark></li><li>神经网络：（监督、非监督）</li></ul><p>模式识别系统基本构成：</p><p><img src=".%5Cpic%5Cimage-20220411200055663.png" alt="image-20220411200055663"></p><ul><li>预处理：去除噪声，数据复原，提取有用信息等</li><li>特征提取和选择：对原始数据进行变换，得到最能反映本质的特征<ul><li>测量空间：原始数据组成的空间</li><li>特征空间：分类识别赖以进行的空间</li><li>模式表示：维数较高的测量空间-&gt;维数较低的特征空间</li></ul></li><li>分类决策：在特征空间用模式识别方法把被识别对象归于某一类别【基本做法：<font color='grey'>在样本训练集基础上确定某个判决规则，使得按这种规则对被识别对象进行分类所造成的错误识别率最小或引起的损失最小</font>】</li></ul><h1 id="2-预备知识"><a href="#2-预备知识" class="headerlink" title="2. 预备知识"></a>2. 预备知识</h1><h2 id="2-1-概率统计"><a href="#2-1-概率统计" class="headerlink" title="2.1 概率统计"></a>2.1 概率统计</h2><p>1、随机向量</p><p>如果一个对象的随机观察值为，它可以构成一个n维特<br>$$<br>{x_1,x_2,……x_n}<br>$$<br>征向量x，即：<br>$$<br>x={x_1,x_2,……x_n}^T<br>$$<br>一个特征可以看作n维空间中的向量或点，此空间称为模式的特征空间<br>$$<br>R^n<br>$$</p><ul><li>期望</li></ul><p>$$<br>E(x)=(E(x_1),E(x_2),……E(x_n))^T<br>$$</p><ul><li>方差</li></ul><p>$$<br>Var(x)=\frac{1}{m}\sum_{i=1}^{n}({x_i-\mu})^2<br>$$</p><ul><li>协方差矩阵</li></ul><p>$$<br>cov(x)=\begin{pmatrix}<br>cov(x_1,x_1)&amp;cov(x_1,x_2)&amp;……&amp;cov(x_1,x_n)\<br>cov(x_2,x_1)&amp;cov(x_2,x_2)&amp;……&amp;cov(x_2,x_n)\<br>……\<br>cov(x_n,x_1)&amp;cov(x_n,x_2)&amp;……&amp;cov(x_n,x_n)\<br>\end{pmatrix}<br>$$</p><p>2、一维正态分布密度函数<br>$$<br>\rho(x)=\frac{1}{\sqrt{2Π}\sigma}exp{\frac{-(x-\mu)^2}{2{\sigma}^2}}<br>$$<br>3、多维正态分布密度函数<br>$$<br>\rho(x)=\frac{1}{\sqrt{2Π}\sqrt{C}}exp{\frac{-(x-\mu)^TC^{-1}{(x-\mu)}}{2}}<br>$$</p><h2 id="2-2-线性代数"><a href="#2-2-线性代数" class="headerlink" title="2.2 线性代数"></a>2.2 线性代数</h2><p>1、向量</p><p>2、内积、点积（1xd）· (1xd)=（1x1）</p><p>3、向量长度（欧几里得范数（1x1））</p><p>4、正交<br>$$<br>x^Ty=0<br>$$</p><p>5、向量之间的夹角</p><p>略</p><p>投影（略）</p><p>6、矩阵：</p><ul><li><p>矩阵乘法</p></li><li><p>矩阵的幂</p></li><li><p>矩阵的转置</p></li><li><p>对称矩阵（方阵）</p></li><li><p>逆矩阵</p></li><li><p>特征向量</p></li><li><p>特征值det(A)=特征值和</p></li><li><p>矩阵的迹tr=对角线元素之和=特征值之和</p></li><li><p>实对称矩阵（每个数都是实数）</p><p>性质</p><ul><li>所有特征值都是实数、特征向量都是实向量</li><li>特征值：</li></ul><p>$$<br>\lambda_1&gt;=\lambda_2&gt;=\lambda_3……\lambda_n<br>$$</p><ul><li>对应的特征向量两两相交</li><li>F=[特征向量1，特征向量2……]nxn是满秩的</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="1-模式识别的主要方法"><a href="#1-模式识别的主要方法" class="headerlink" title="1. 模式识别的主要方法"></a>1. 模式识别的主要方法</h1><ul><li>数据聚类：用某种<mark>相似性方法</mark>将原始数据组织成有意义的数据集合（非监督）</li><li>统计分类：<mark>概念驱动</mark>，基于概率统计模型得到各个类别特征向量的分布（有监督）</li><li>结构模式识别：通过考虑<mark>识别对象各个部分之间的联系</mark>来达到识别分类的目的,<mark>句法模式识别</mark></li><li>神经网络：（监督、非监督）</li></ul><p>模式识别系统基本构成：</p><p><img src=".%5Cpic%5Cimage-20220411200055663.png" alt="image-20220411200055663"></p><ul><li>预处理：去除噪声，数据复原，提取有用信息等</li><li>特征提取和选择：对原始数据进行变换，得到最能反映本质的特征<ul><li>测量空间：原始数据组成的空间</li><li>特征空间：分类识别赖以进行的空间</li><li>模式表示：维数较高的测量空间-&gt;维数较低的特征空间</li></ul></li><li>分类决策：在特征空间用模式识别方法把被识别对象归于某一类别【基本做法：<font color='grey'>在样本训练集基础上确定某个判决规则，使得按这种规则对被识别对象进行分类所造成的错误识别率最小或引起的损失最小</font>】</li></ul><h1 id="2-预备知识"><a href="#2-预备知识" class="headerlink" title="2. 预备知识"></a>2. 预备知识</h1><h2 id="2-1-概率统计"><a href="#2-1-概率统计" class="headerlink" title="2.1 概率统计"></a>2.1 概率统计</h2><p>1、随机向量</p><p>如果一个对象的随机观察值为，它可以构成一个n维特<br>$$<br>{x_1,x_2,……x_n}<br>$$<br>征向量x，即：<br>$$<br>x={x_1,x_2,……x_n}^T<br>$$<br>一个特征可以看作n维空间中的向量或点，此空间称为模式的特征空间<br>$$<br>R^n<br>$$</p><ul><li>期望</li></ul><p>$$<br>E(x)=(E(x_1),E(x_2),……E(x_n))^T<br>$$</p><ul><li>方差</li></ul><p>$$<br>Var(x)=\frac{1}{m}\sum_{i=1}^{n}({x_i-\mu})^2<br>$$</p><ul><li>协方差矩阵</li></ul><p>$$<br>cov(x)=\begin{pmatrix}<br>cov(x_1,x_1)&amp;cov(x_1,x_2)&amp;……&amp;cov(x_1,x_n)\<br>cov(x_2,x_1)&amp;cov(x_2,x_2)&amp;……&amp;cov(x_2,x_n)\<br>……\<br>cov(x_n,x_1)&amp;cov(x_n,x_2)&amp;……&amp;cov(x_n,x_n)\<br>\end{pmatrix}<br>$$</p><p>2、一维正态分布密度函数<br>$$<br>\rho(x)=\frac{1}{\sqrt{2Π}\sigma}exp{\frac{-(x-\mu)^2}{2{\sigma}^2}}<br>$$<br>3、多维正态分布密度函数</p><p><img src=".%5Cpic%5Cimage-20220413174621639.png" alt="image-20220413174621639"><br>$$<br>\rho(x)=\frac{1}{\sqrt{2Π}\sqrt{C}}exp{\frac{-(x-\mu)^TC^{-1}{(x-\mu)}}{2}}<br>$$</p><h2 id="2-2-线性代数"><a href="#2-2-线性代数" class="headerlink" title="2.2 线性代数"></a>2.2 线性代数</h2><p>1、向量</p><p>2、内积、点积（1xd）· (1xd)=（1x1）</p><p>3、向量长度（欧几里得范数（1x1））</p><p>4、正交<br>$$<br>x^Ty=0<br>$$</p><p>5、向量之间的夹角</p><p>略</p><p>投影（略）</p><p>6、矩阵：</p><ul><li><p>矩阵乘法</p></li><li><p>矩阵的幂</p></li><li><p>矩阵的转置</p></li><li><p>对称矩阵（方阵）</p></li><li><p>逆矩阵</p></li><li><p>特征向量</p></li><li><p>特征值det(A)=特征值和</p></li><li><p>矩阵的迹tr=对角线元素之和=特征值之和</p></li><li><p>实对称矩阵（每个数都是实数）</p><p>性质</p><ul><li>所有特征值都是实数、特征向量都是实向量</li><li>特征值：</li></ul><p>$$<br>\lambda_1&gt;=\lambda_2&gt;=\lambda_3……\lambda_n<br>$$</p><ul><li>对应的特征向量两两相交</li><li>F=[特征向量1，特征向量2……]nxn是满秩的</li></ul></li></ul>]]></content>
       
       
       <categories>
