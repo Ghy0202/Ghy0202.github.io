@@ -4,8 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="理想国的糕">
-    <meta name="description" content="理想国的糕">
+    <meta name="keywords" content="模式识别——聚类, 理想国的糕">
+    <meta name="description" content="1、模式相似性测度1.1 距离测度
+欧氏距离：注意物理量单位统一（即需要注意归一化处理）
+马氏距离：
+
+$$D^2=(X-M)^TC^{-1}(X-M)$$
+特点：对于一切非奇异线性变化都是不变的，说明它不受特征量纲的影响，故是平移不变的。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>理想国的糕</title>
+    <title>模式识别——聚类 | 理想国的糕</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -247,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">模式识别——聚类</h1>
                 </div>
             </div>
         </div>
@@ -372,12 +377,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/">
+                                <span class="chip bg-color">模式识别</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%97%A0%E7%9B%91%E7%9D%A3/">
+                                <span class="chip bg-color">无监督</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/AI/" class="post-category">
+                                AI
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -386,7 +408,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-28
+                    2022-04-12
                 </div>
                 
 
@@ -395,7 +417,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    32
+                    176
                 </div>
                 
 
@@ -415,34 +437,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <style type="text/css">
-    /* don't remove. */
-    .about-cover {
-        height: 90.2vh;
-    }
-</style>
-<div class="bg-cover pd-header about-cover">
-    <div class="container">
-        <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-                <div class="brand">
-                    <div class="title center-align">
-                        404
-                    </div>
-                    <div class="description center-align">
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
-</script>
-
+                <h1 id="1、模式相似性测度"><a href="#1、模式相似性测度" class="headerlink" title="1、模式相似性测度"></a>1、模式相似性测度</h1><h2 id="1-1-距离测度"><a href="#1-1-距离测度" class="headerlink" title="1.1 距离测度"></a>1.1 距离测度</h2><ul>
+<li>欧氏距离：注意物理量单位统一（即需要注意归一化处理）</li>
+<li>马氏距离：</li>
+</ul>
+<p>$$<br>D^2=(X-M)^TC^{-1}(X-M)<br>$$</p>
+<p>特点：对于一切非奇异线性变化都是不变的，说明它不受特征量纲的影响，故是平移不变的。C是矢量集的协方差矩阵，故马氏距离排除了模式样本之间的相关性。C=I时候，马氏距离=欧氏距离。</p>
+<p>问题：实际问题中难以计算</p>
+<ul>
+<li><p>明式距离：<br>$$<br>D_i(X_i,X_j)=\sum_{k=1}^{n}(|x_{ik}-x_{jk}|^m)^{1/m}<br>$$<br>m=2时，欧氏距离</p>
+<p>m=1时，街坊距离</p>
+</li>
+</ul>
+<h2 id="1-2-相似测度"><a href="#1-2-相似测度" class="headerlink" title="1.2 相似测度"></a>1.2 相似测度</h2>
                 
             </div>
             <hr/>
@@ -468,7 +475,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ghy0202.github.io/404/404.html">https://ghy0202.github.io/404/404.html</a>
+                    <a href="https://ghy0202.github.io/2022/04/12/mo-shi-shi-bie-ju-lei/">https://ghy0202.github.io/2022/04/12/mo-shi-shi-bie-ju-lei/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -505,7 +512,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/">
+                                    <span class="chip bg-color">模式识别</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%97%A0%E7%9B%91%E7%9D%A3/">
+                                    <span class="chip bg-color">无监督</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -943,18 +958,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/404/404.html">
+                <a href="/2022/04/13/suan-fa-kang-fu-xun-lian-04/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="算法康复训练04">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">算法康复训练04</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -964,18 +978,33 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-28
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-13
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Gao
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0/">
+                        <span class="chip bg-color">编程练习</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%BA%E8%80%83/">
+                        <span class="chip bg-color">机考</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -983,16 +1012,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/404/404.html">
+                <a href="/2022/04/11/mo-shi-shi-bie-shu-li-ji-chu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="模式识别——数理基础">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">模式识别——数理基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1003,17 +1032,36 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-11
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Gao
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI/" class="post-category">
+                                    AI
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/">
+                        <span class="chip bg-color">模式识别</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                        <span class="chip bg-color">线性代数</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">统计分析</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
