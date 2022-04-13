@@ -459,13 +459,13 @@
 <li><input checked="" disabled="" type="checkbox"> 后端管理员增删改查用户数据</li>
 <li><input checked="" disabled="" type="checkbox"> 前台登陆退出注册</li>
 </ul>
-<p><img src=".%5Cpic%5Cimage-20220413235325198.png" alt="image-20220413235325198"></p>
-<p><img src=".%5Cpic%5Cimage-20220413235003758.png" alt="image-20220413235003758"></p>
-<p><img src=".%5Cpic%5Cimage-20220413235900459.png" alt="image-20220413235900459"></p>
+<p><img src="./pic/image-20220413235325198.png" alt="image-20220413235325198"></p>
+<p><img src="./pic/image-20220413235003758.png" alt="image-20220413235003758"></p>
+<p><img src="./pic/image-20220413235900459.png" alt="image-20220413235900459"></p>
 <p>利用API导入了交流平台模块，真正成熟上线的话会考虑删掉，因为本意是开发之初希望收到用户反馈修改bug</p>
-<p><img src=".%5Cpic%5Cimage-20220413235542970.png" alt="image-20220413235542970"></p>
+<p><img src="./pic/image-20220413235542970.png" alt="image-20220413235542970"></p>
 <p>遇到的问题是，要把之前复现的模型在Web显示出来，后台很好写，但是耦合的时候 遇到了Django导入模块报错的问题，之前还凑合，但是这部分代码量确实大，必须导入模块否则代码可读性≈0，于是找了好多解决的帖子。</p>
-<p><img src=".%5Cpic%5Cimage-20220413233329464.png" alt="image-20220413233329464"></p>
+<p><img src="./pic/image-20220413233329464.png" alt="image-20220413233329464"></p>
 <p>试了好几种导入语句都是花式报错，最终解决办法见<a target="_blank" rel="noopener" href="https://www.cnblogs.com/VirtualMe/p/13307834.html">此博客</a>，实际上还是导入语句写得不对，Django不识别的问题，不需要去改编译器设置。AK</p>
 <p>接下来的任务：</p>
 <ul>
