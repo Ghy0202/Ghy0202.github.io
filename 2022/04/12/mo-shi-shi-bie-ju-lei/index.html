@@ -252,7 +252,7 @@ $$D^2=(X-M)^TC^{-1}(X-M)$$
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/20190330202529415.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h5aXN2,size_16,color_FFFFFF,t_70')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -417,7 +417,7 @@ $$D^2=(X-M)^TC^{-1}(X-M)$$
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    176
+                    543
                 </div>
                 
 
@@ -449,7 +449,87 @@ $$D^2=(X-M)^TC^{-1}(X-M)$$
 <p>m=1时，街坊距离</p>
 </li>
 </ul>
-<h2 id="1-2-相似测度"><a href="#1-2-相似测度" class="headerlink" title="1.2 相似测度"></a>1.2 相似测度</h2>
+<h2 id="1-2-相似测度"><a href="#1-2-相似测度" class="headerlink" title="1.2 相似测度"></a>1.2 相似测度</h2><p>略</p>
+<h1 id="2-聚类算法"><a href="#2-聚类算法" class="headerlink" title="2. 聚类算法"></a>2. 聚类算法</h1><ol>
+<li>Kmeans要熟悉编程和流程</li>
+<li>DBSCAN流程</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn <span class="token keyword">import</span> datasets
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> random
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> copy
+ 
+ 
+<span class="token keyword">def</span> <span class="token function">find_neighbor</span><span class="token punctuation">(</span>j<span class="token punctuation">,</span> x<span class="token punctuation">,</span> eps<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    N <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        temp <span class="token operator">=</span> np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>np<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>square<span class="token punctuation">(</span>x<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">-</span>x<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 计算欧式距离</span>
+        <span class="token keyword">if</span> temp <span class="token operator">&lt;=</span> eps<span class="token punctuation">:</span>
+            N<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token builtin">set</span><span class="token punctuation">(</span>N<span class="token punctuation">)</span>
+ 
+ 
+<span class="token keyword">def</span> <span class="token function">DBSCAN</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> eps<span class="token punctuation">,</span> min_Pts<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    k <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+    neighbor_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment"># 用来保存每个数据的邻域</span>
+    omega_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment"># 核心对象集合</span>
+    gama <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span>x <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 初始时将所有点标记为未访问</span>
+    cluster <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>  <span class="token comment"># 聚类</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        neighbor_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>find_neighbor<span class="token punctuation">(</span>i<span class="token punctuation">,</span> X<span class="token punctuation">,</span> eps<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>neighbor_list<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">>=</span> min_Pts<span class="token punctuation">:</span>
+            omega_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>  <span class="token comment"># 将样本加入核心对象集合</span>
+    omega_list <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span>omega_list<span class="token punctuation">)</span>  <span class="token comment"># 转化为集合便于操作</span>
+    <span class="token keyword">while</span> <span class="token builtin">len</span><span class="token punctuation">(</span>omega_list<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+        gama_old <span class="token operator">=</span> copy<span class="token punctuation">.</span>deepcopy<span class="token punctuation">(</span>gama<span class="token punctuation">)</span>
+        j <span class="token operator">=</span> random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">(</span>omega_list<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 随机选取一个核心对象</span>
+        k <span class="token operator">=</span> k <span class="token operator">+</span> <span class="token number">1</span>
+        Q <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        Q<span class="token punctuation">.</span>append<span class="token punctuation">(</span>j<span class="token punctuation">)</span>
+        gama<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>j<span class="token punctuation">)</span>
+        <span class="token keyword">while</span> <span class="token builtin">len</span><span class="token punctuation">(</span>Q<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+            q <span class="token operator">=</span> Q<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+            Q<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>q<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>neighbor_list<span class="token punctuation">[</span>q<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">>=</span> min_Pts<span class="token punctuation">:</span>
+                delta <span class="token operator">=</span> neighbor_list<span class="token punctuation">[</span>q<span class="token punctuation">]</span> <span class="token operator">&amp;</span> gama
+                deltalist <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>delta<span class="token punctuation">)</span>
+                <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>delta<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    Q<span class="token punctuation">.</span>append<span class="token punctuation">(</span>deltalist<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                    gama <span class="token operator">=</span> gama <span class="token operator">-</span> delta
+        Ck <span class="token operator">=</span> gama_old <span class="token operator">-</span> gama
+        Cklist <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>Ck<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>Ck<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            cluster<span class="token punctuation">[</span>Cklist<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> k
+        omega_list <span class="token operator">=</span> omega_list <span class="token operator">-</span> Ck
+    <span class="token keyword">return</span> cluster
+ 
+ 
+X1<span class="token punctuation">,</span> y1 <span class="token operator">=</span> datasets<span class="token punctuation">.</span>make_circles<span class="token punctuation">(</span>n_samples<span class="token operator">=</span><span class="token number">2000</span><span class="token punctuation">,</span> factor<span class="token operator">=</span><span class="token number">.6</span><span class="token punctuation">,</span> noise<span class="token operator">=</span><span class="token number">.02</span><span class="token punctuation">)</span>
+X2<span class="token punctuation">,</span> y2 <span class="token operator">=</span> datasets<span class="token punctuation">.</span>make_blobs<span class="token punctuation">(</span>n_samples<span class="token operator">=</span><span class="token number">400</span><span class="token punctuation">,</span> n_features<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> centers<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1.2</span><span class="token punctuation">,</span> <span class="token number">1.2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> cluster_std<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">.1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">9</span><span class="token punctuation">)</span>
+X <span class="token operator">=</span> np<span class="token punctuation">.</span>concatenate<span class="token punctuation">(</span><span class="token punctuation">(</span>X1<span class="token punctuation">,</span> X2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+eps <span class="token operator">=</span> <span class="token number">0.08</span>
+min_Pts <span class="token operator">=</span> <span class="token number">10</span>
+begin <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+C <span class="token operator">=</span> DBSCAN<span class="token punctuation">(</span>X<span class="token punctuation">,</span> eps<span class="token punctuation">,</span> min_Pts<span class="token punctuation">)</span>
+end <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>X<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> X<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> c<span class="token operator">=</span>C<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>关于效率：</p>
+<p>find_neighbor可以替换为：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">N <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+temp <span class="token operator">=</span> np<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token operator">-</span>x<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">0.5</span>
+N <span class="token operator">=</span> np<span class="token punctuation">.</span>argwhere<span class="token punctuation">(</span>temp <span class="token operator">&lt;=</span> eps<span class="token punctuation">)</span><span class="token punctuation">.</span>flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>tolist<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<ol start="3">
+<li>K中心点算法</li>
+</ol>
+
                 
             </div>
             <hr/>
@@ -1262,7 +1342,7 @@ $$D^2=(X-M)^TC^{-1}(X-M)$$
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">26k</span>
+                        class="white-color">26.5k</span>
             
             
             
