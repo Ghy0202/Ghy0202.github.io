@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>软件课程设计2关于语法分析器的故事</title>
+      <link href="/2022/04/16/ruan-jian-ke-cheng-she-ji-2-guan-yu-yu-fa-fen-xi-qi-de-gu-shi/"/>
+      <url>/2022/04/16/ruan-jian-ke-cheng-she-ji-2-guan-yu-yu-fa-fen-xi-qi-de-gu-shi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-课设要求"><a href="#1-课设要求" class="headerlink" title="1. 课设要求"></a>1. 课设要求</h1><p>TASK2</p><p>任务2：创建一个使用LL(1) 方法或LR(1) 方法的语法分析程序。</p><p>程序有两个输入</p><blockquote><ol><li><p>一个是文本文档，其中包含2º型文法（上下文无关文法）的产生式集</p></li><li><p>任务1词法分析程序输出的（生成的）token令牌表。程序的输出包括：YES或NO（源代码字符串符合此2º型文法，或者源代码字符串不符合此2º型文法）；错误提示文件，如果有语法错标示出错行号，并给出大致的出错原因。</p></li></ol></blockquote><p>语法分析程序的推荐处理逻辑：根据用户输入的2º型文法，生成Action及Goto表，设计合适的数据结构，判断 token序列（用户输入的源程序转换）是否符合LR1文法规则，识别token序列，输出结果。</p><p>提示：选用LR(1)方法的起评分数高😉</p><p>所以……当然是选用的LR(1)文法啦🤣，真的是被迫“卷”</p><h1 id="2-实验结果"><a href="#2-实验结果" class="headerlink" title="2. 实验结果"></a>2. 实验结果</h1><p><strong>input_right.txt</strong>(正确的token表)</p><pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">2intkeyword2mainkeyword2(limited2)limited2&#123;limited312+13iconst3;limited4intkeyword4ksign4&#x3D;operator4-12.46e78const5;limited6   int keyword6   y   sign6   &#x3D;   operator6xsign6+operator6ksign6;limited7returnkeyword70const7;limited8&#125;limited<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>input_err.txt</strong>(错误的token表)</p><pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">2intkeyword2mainkeyword2(limited2)limited2&#123;limited312+13iconst3;limited4intkeyword4ksign4&#x3D;operator4-12.46e78const5;limited6   int keyword6   y   sign6   &#x3D;   operator6xsign6+operator6ksign6;limited7returnkeyword70const8&#125;limited<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>input2.txt</strong>(语法)</p><pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">[START] --&gt; [X][X] --&gt; [&#39;int&#39;][&#39;main&#39;][&#39;(&#39;][&#39;)&#39;][&#39;&#123;&#39;][BLOCK][&#39;&#125;&#39;][BLOCK] --&gt; [const][&#39;;&#39;][BLOCK] --&gt; [const][&#39;;&#39;][BLOCK][BLOCK] --&gt; [FORMULA][&#39;;&#39;][BLOCK][FORMULA] --&gt; [&#39;int&#39;][sign][&#39;&#x3D;&#39;][F][F] --&gt; [E][&#39;+&#39;][F][F] --&gt; [E][E] --&gt; [N][&#39;*&#39;][N][E] --&gt; [N][N] --&gt; [sign][N] --&gt; [const][BLOCK] --&gt; [RETURN][RETURN] --&gt; [&#39;return&#39;][const][&#39;;&#39;][RETURN] --&gt; [final][X] --&gt;[final]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>output</strong></p><p>YES</p><p>NO</p><p><strong>中间生成的LR（1）分析表</strong></p><p><img src="/images/image-20220416213223047.png" alt="right!"></p><p><img src="/images/image-20220416221421232.png" alt="err~"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 课程设计 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 编译原理 </tag>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>算法训练05</title>
       <link href="/2022/04/16/suan-fa-xun-lian-05/"/>
       <url>/2022/04/16/suan-fa-xun-lian-05/</url>

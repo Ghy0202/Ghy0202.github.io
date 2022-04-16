@@ -4,11 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="模式识别——数理基础, 理想国的糕">
-    <meta name="description" content="1. 模式识别的主要方法
-数据聚类：用某种相似性方法将原始数据组织成有意义的数据集合（非监督）
-统计分类：概念驱动，基于概率统计模型得到各个类别特征向量的分布（有监督）
-结构模式识别：通过考虑识别对象各个部分之间的联系来达到识别分类的目的,">
+    <meta name="keywords" content="软件课程设计2关于语法分析器的故事, 理想国的糕">
+    <meta name="description" content="1. 课设要求TASK2
+任务2：创建一个使用LL(1) 方法或LR(1) 方法的语法分析程序。
+程序有两个输入
+
+
+一个是文本文档，其中包含2º型文法（上下文无关文法）的产生式集
+
+任务1词法分析程序输出的（生成的）token令牌表。程序">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +24,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>模式识别——数理基础 | 理想国的糕</title>
+    <title>软件课程设计2关于语法分析器的故事 | 理想国的糕</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -250,12 +254,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://tse2-mm.cn.bing.net/th/id/OIP-C.gcv6ATOIrD43uRsigDjjogHaEo?w=300&h=187&c=7&r=0&o=5&dpr=1.25&pid=1.7')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">模式识别——数理基础</h1>
+                    <h1 class="description center-align post-title">软件课程设计2关于语法分析器的故事</h1>
                 </div>
             </div>
         </div>
@@ -377,16 +381,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/">
-                                <span class="chip bg-color">模式识别</span>
+                            <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">
+                                <span class="chip bg-color">编译原理</span>
                             </a>
                         
-                            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
-                                <span class="chip bg-color">线性代数</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/">
-                                <span class="chip bg-color">统计分析</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
                             </a>
                         
                     </div>
@@ -397,8 +397,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/AI/" class="post-category">
-                                AI
+                            <a href="/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                课程设计
                             </a>
                         
                     </div>
@@ -410,7 +410,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-11
+                    2022-04-16
                 </div>
                 
 
@@ -419,7 +419,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    692
+                    506
                 </div>
                 
 
@@ -439,78 +439,93 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-模式识别的主要方法"><a href="#1-模式识别的主要方法" class="headerlink" title="1. 模式识别的主要方法"></a>1. 模式识别的主要方法</h1><ul>
-<li>数据聚类：用某种<mark>相似性方法</mark>将原始数据组织成有意义的数据集合（非监督）</li>
-<li>统计分类：<mark>概念驱动</mark>，基于概率统计模型得到各个类别特征向量的分布（有监督）</li>
-<li>结构模式识别：通过考虑<mark>识别对象各个部分之间的联系</mark>来达到识别分类的目的,<mark>句法模式识别</mark></li>
-<li>神经网络：（监督、非监督）</li>
-</ul>
-<p>模式识别系统基本构成：</p>
-<p><img src=".%5Cpic%5Cimage-20220411200055663.png" alt="image-20220411200055663"></p>
-<ul>
-<li>预处理：去除噪声，数据复原，提取有用信息等</li>
-<li>特征提取和选择：对原始数据进行变换，得到最能反映本质的特征<ul>
-<li>测量空间：原始数据组成的空间</li>
-<li>特征空间：分类识别赖以进行的空间</li>
-<li>模式表示：维数较高的测量空间-&gt;维数较低的特征空间</li>
-</ul>
+                <h1 id="1-课设要求"><a href="#1-课设要求" class="headerlink" title="1. 课设要求"></a>1. 课设要求</h1><p>TASK2</p>
+<p>任务2：创建一个使用LL(1) 方法或LR(1) 方法的语法分析程序。</p>
+<p>程序有两个输入</p>
+<blockquote>
+<ol>
+<li><p>一个是文本文档，其中包含2º型文法（上下文无关文法）的产生式集</p>
 </li>
-<li>分类决策：在特征空间用模式识别方法把被识别对象归于某一类别【基本做法：<font color='grey'>在样本训练集基础上确定某个判决规则，使得按这种规则对被识别对象进行分类所造成的错误识别率最小或引起的损失最小</font>】</li>
-</ul>
-<h1 id="2-预备知识"><a href="#2-预备知识" class="headerlink" title="2. 预备知识"></a>2. 预备知识</h1><h2 id="2-1-概率统计"><a href="#2-1-概率统计" class="headerlink" title="2.1 概率统计"></a>2.1 概率统计</h2><p>1、随机向量</p>
-<p>如果一个对象的随机观察值为，它可以构成一个n维特<br>$$<br>{x_1,x_2,……x_n}<br>$$<br>征向量x，即：<br>$$<br>x={x_1,x_2,……x_n}^T<br>$$<br>一个特征可以看作n维空间中的向量或点，此空间称为模式的特征空间<br>$$<br>R^n<br>$$</p>
-<ul>
-<li>期望</li>
-</ul>
-<p>$$<br>E(x)=(E(x_1),E(x_2),……E(x_n))^T<br>$$</p>
-<ul>
-<li>方差</li>
-</ul>
-<p>$$<br>Var(x)=\frac{1}{m}\sum_{i=1}^{n}({x_i-\mu})^2<br>$$</p>
-<ul>
-<li>协方差矩阵</li>
-</ul>
-<p>$$<br>cov(x)=\begin{pmatrix}<br>cov(x_1,x_1)&amp;cov(x_1,x_2)&amp;……&amp;cov(x_1,x_n)\<br>cov(x_2,x_1)&amp;cov(x_2,x_2)&amp;……&amp;cov(x_2,x_n)\<br>……\<br>cov(x_n,x_1)&amp;cov(x_n,x_2)&amp;……&amp;cov(x_n,x_n)\<br>\end{pmatrix}<br>$$</p>
-<p>2、一维正态分布密度函数<br>$$<br>\rho(x)=\frac{1}{\sqrt{2Π}\sigma}exp{\frac{-(x-\mu)^2}{2{\sigma}^2}}<br>$$<br>3、多维正态分布密度函数</p>
-<p><img src=".%5Cpic%5Cimage-20220413174621639.png" alt="image-20220413174621639"><br>$$<br>\rho(x)=\frac{1}{\sqrt{2Π}\sqrt{C}}exp{\frac{-(x-\mu)^TC^{-1}{(x-\mu)}}{2}}<br>$$</p>
-<h2 id="2-2-线性代数"><a href="#2-2-线性代数" class="headerlink" title="2.2 线性代数"></a>2.2 线性代数</h2><p>1、向量</p>
-<p>2、内积、点积（1xd）· (1xd)=（1x1）</p>
-<p>3、向量长度（欧几里得范数（1x1））</p>
-<p>4、正交<br>$$<br>x^Ty=0<br>$$</p>
-<p>5、向量之间的夹角</p>
-<p>略</p>
-<p>投影（略）</p>
-<p>6、矩阵：</p>
-<ul>
-<li><p>矩阵乘法</p>
+<li><p>任务1词法分析程序输出的（生成的）token令牌表。程序的输出包括：YES或NO（源代码字符串符合此2º型文法，或者源代码字符串不符合此2º型文法）；错误提示文件，如果有语法错标示出错行号，并给出大致的出错原因。</p>
 </li>
-<li><p>矩阵的幂</p>
-</li>
-<li><p>矩阵的转置</p>
-</li>
-<li><p>对称矩阵（方阵）</p>
-</li>
-<li><p>逆矩阵</p>
-</li>
-<li><p>特征向量</p>
-</li>
-<li><p>特征值det(A)=特征值和</p>
-</li>
-<li><p>矩阵的迹tr=对角线元素之和=特征值之和</p>
-</li>
-<li><p>实对称矩阵（每个数都是实数）</p>
-<p>性质</p>
-<ul>
-<li>所有特征值都是实数、特征向量都是实向量</li>
-<li>特征值：</li>
-</ul>
-<p>$$<br>\lambda_1&gt;=\lambda_2&gt;=\lambda_3……\lambda_n<br>$$</p>
-<ul>
-<li>对应的特征向量两两相交</li>
-<li>F=[特征向量1，特征向量2……]nxn是满秩的</li>
-</ul>
-</li>
-</ul>
+</ol>
+</blockquote>
+<p>语法分析程序的推荐处理逻辑：根据用户输入的2º型文法，生成Action及Goto表，设计合适的数据结构，判断 token序列（用户输入的源程序转换）是否符合LR1文法规则，识别token序列，输出结果。</p>
+<p>提示：选用LR(1)方法的起评分数高😉</p>
+<p>所以……当然是选用的LR(1)文法啦🤣，真的是被迫“卷”</p>
+<h1 id="2-实验结果"><a href="#2-实验结果" class="headerlink" title="2. 实验结果"></a>2. 实验结果</h1><p><strong>input_right.txt</strong>(正确的token表)</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">2	int	keyword
+2	main	keyword
+2	(	limited
+2	)	limited
+2	&#123;	limited
+3	12+13i	const
+3	;	limited
+4	int	keyword
+4	k	sign
+4	&#x3D;	operator
+4	-12.46e78	const
+5	;	limited
+6   int keyword
+6   y   sign
+6   &#x3D;   operator
+6	x	sign
+6	+	operator
+6	k	sign
+6	;	limited
+7	return	keyword
+7	0	const
+7	;	limited
+8	&#125;	limited<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>input_err.txt</strong>(错误的token表)</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">2	int	keyword
+2	main	keyword
+2	(	limited
+2	)	limited
+2	&#123;	limited
+3	12+13i	const
+3	;	limited
+4	int	keyword
+4	k	sign
+4	&#x3D;	operator
+4	-12.46e78	const
+5	;	limited
+6   int keyword
+6   y   sign
+6   &#x3D;   operator
+6	x	sign
+6	+	operator
+6	k	sign
+6	;	limited
+7	return	keyword
+7	0	const
+8	&#125;	limited<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>input2.txt</strong>(语法)</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">[START] --&gt; [X]
+[X] --&gt; [&#39;int&#39;][&#39;main&#39;][&#39;(&#39;][&#39;)&#39;][&#39;&#123;&#39;][BLOCK][&#39;&#125;&#39;]
+[BLOCK] --&gt; [const][&#39;;&#39;]
+[BLOCK] --&gt; [const][&#39;;&#39;][BLOCK]
+[BLOCK] --&gt; [FORMULA][&#39;;&#39;][BLOCK]
+[FORMULA] --&gt; [&#39;int&#39;][sign][&#39;&#x3D;&#39;][F]
+[F] --&gt; [E][&#39;+&#39;][F]
+[F] --&gt; [E]
+[E] --&gt; [N][&#39;*&#39;][N]
+[E] --&gt; [N]
+[N] --&gt; [sign]
+[N] --&gt; [const]
+[BLOCK] --&gt; [RETURN]
+[RETURN] --&gt; [&#39;return&#39;][const][&#39;;&#39;]
+[RETURN] --&gt; [final]
+[X] --&gt;[final]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>output</strong></p>
+<p>YES</p>
+<p>NO</p>
+<p><strong>中间生成的LR（1）分析表</strong></p>
+<p><img src="/images/image-20220416213223047.png" alt="right!"></p>
+<p><img src="/images/image-20220416221421232.png" alt="err~"></p>
 
                 
             </div>
@@ -537,7 +552,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ghy0202.github.io/2022/04/11/mo-shi-shi-bie-shu-li-ji-chu/">https://ghy0202.github.io/2022/04/11/mo-shi-shi-bie-shu-li-ji-chu/</a>
+                    <a href="https://ghy0202.github.io/2022/04/16/ruan-jian-ke-cheng-she-ji-2-guan-yu-yu-fa-fen-xi-qi-de-gu-shi/">https://ghy0202.github.io/2022/04/16/ruan-jian-ke-cheng-she-ji-2-guan-yu-yu-fa-fen-xi-qi-de-gu-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -575,16 +590,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/">
-                                    <span class="chip bg-color">模式识别</span>
+                                <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">
+                                    <span class="chip bg-color">编译原理</span>
                                 </a>
                             
-                                <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
-                                    <span class="chip bg-color">线性代数</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/">
-                                    <span class="chip bg-color">统计分析</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
                                 </a>
                             
                         </div>
@@ -1024,16 +1035,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/04/12/mo-shi-shi-bie-ju-lei/">
+                <a href="/2022/04/16/ruan-jian-ke-cheng-she-ji-2-guan-yu-yu-fa-fen-xi-qi-de-gu-shi/">
                     <div class="card-image">
                         
-                        <img src="https://img-blog.csdnimg.cn/20190330202529415.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h5aXN2,size_16,color_FFFFFF,t_70" class="responsive-img" alt="模式识别——聚类">
+                        <img src="https://tse2-mm.cn.bing.net/th/id/OIP-C.gcv6ATOIrD43uRsigDjjogHaEo?w=300&h=187&c=7&r=0&o=5&dpr=1.25&pid=1.7" class="responsive-img" alt="软件课程设计2关于语法分析器的故事">
                         
-                        <span class="card-title">模式识别——聚类</span>
+                        <span class="card-title">软件课程设计2关于语法分析器的故事</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1043,30 +1055,31 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/AI/" class="post-category">
-                                    AI
+                            <a href="/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                    课程设计
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/">
-                        <span class="chip bg-color">模式识别</span>
+                    <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">编译原理</span>
                     </a>
                     
-                    <a href="/tags/%E6%97%A0%E7%9B%91%E7%9D%A3/">
-                        <span class="chip bg-color">无监督</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
                 </div>
@@ -1080,13 +1093,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/11/suan-fa-kang-fu-xun-lian-03/">
+                <a href="/2022/04/16/suan-fa-xun-lian-05/">
                     <div class="card-image">
                         
+                        <img src="https://pic1.zhimg.com/v2-5b38dbf85c2b5b313eef15a64fa07dfc_r.jpg?source=1940ef5c" class="responsive-img" alt="算法训练05">
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="算法康复训练03">
-                        
-                        <span class="card-title">算法康复训练03</span>
+                        <span class="card-title">算法训练05</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1097,7 +1109,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-16
                             </span>
                         <span class="publish-author">
                             
