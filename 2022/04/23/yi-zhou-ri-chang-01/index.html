@@ -4,38 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="PTA甲级模拟1144-1147, 理想国的糕">
-    <meta name="description" content="1 知识点总结本次作业涉及到的知识点有：
-
-
-
-题号
-难度
-知识点
-
-
-
-1144
-🐸
-数组+基本排序
-
-
-1145
-🐸🐸
-hash+二次探测（temp+k*k）%tsize
-
-
-1146
-
-
-
-
-1147
-
-
-
-
-2 分题题解2.1">
+    <meta name="keywords" content="一洲日常01, 理想国的糕">
+    <meta name="description" content="1. 关于摸鱼周五
+上午做完了图像处理的作业，下午睡了午觉起来是两点一刻。QQ上戳了戳高冷的导师，提醒了一下下一个阶段的安排，然后等回复。无事可做的午后，本来的安排是task3和leetcode,但是可能是宿舍的温度过于舒适了叭，于是打开网">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -47,7 +18,7 @@ hash+二次探测（temp+k*k）%tsize
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>PTA甲级模拟1144-1147 | 理想国的糕</title>
+    <title>一洲日常01 | 理想国的糕</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -277,12 +248,12 @@ hash+二次探测（temp+k*k）%tsize
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://pic3.zhimg.com/v2-2333c0fbdb2bead687da0abae02b660e_r.jpg?source=1940ef5c')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">PTA甲级模拟1144-1147</h1>
+                    <h1 class="description center-align post-title">一洲日常01</h1>
                 </div>
             </div>
         </div>
@@ -404,12 +375,8 @@ hash+二次探测（temp+k*k）%tsize
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0/">
-                                <span class="chip bg-color">编程练习</span>
-                            </a>
-                        
-                            <a href="/tags/PTA/">
-                                <span class="chip bg-color">PTA</span>
+                            <a href="/tags/vlog%E6%97%A5%E5%B8%B8/">
+                                <span class="chip bg-color">vlog日常</span>
                             </a>
                         
                     </div>
@@ -420,8 +387,8 @@ hash+二次探测（temp+k*k）%tsize
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
-                                算法与数据结构
+                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
+                                生活
                             </a>
                         
                     </div>
@@ -433,7 +400,7 @@ hash+二次探测（temp+k*k）%tsize
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-29
+                    2022-04-23
                 </div>
                 
 
@@ -442,7 +409,7 @@ hash+二次探测（temp+k*k）%tsize
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    539
+                    550
                 </div>
                 
 
@@ -462,141 +429,30 @@ hash+二次探测（temp+k*k）%tsize
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-知识点总结"><a href="#1-知识点总结" class="headerlink" title="1 知识点总结"></a>1 知识点总结</h1><p>本次作业涉及到的知识点有：</p>
-<table>
-<thead>
-<tr>
-<th>题号</th>
-<th>难度</th>
-<th>知识点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1144</td>
-<td>🐸</td>
-<td>数组+基本排序</td>
-</tr>
-<tr>
-<td>1145</td>
-<td>🐸🐸</td>
-<td>hash+二次探测<strong>（temp+k*k）%tsize</strong></td>
-</tr>
-<tr>
-<td>1146</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>1147</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h1 id="2-分题题解"><a href="#2-分题题解" class="headerlink" title="2 分题题解"></a>2 分题题解</h1><h2 id="2-1-第一题"><a href="#2-1-第一题" class="headerlink" title="2.1 第一题"></a>2.1 第一题</h2><blockquote>
-<p>这一题基本上考察的是细心，易错点：</p>
-<ul>
-<li>如果给定序列类似：……1，2，3……n-1,n那么缺失的最小正整数为n+1</li>
-<li>如果给定序列为……0，2，3……n-1,n那缺失的最小为1</li>
-<li>其余情况只需要判断为正数的时候，与下一个的差值是否为1</li>
-</ul>
+                <h1 id="1-关于摸鱼"><a href="#1-关于摸鱼" class="headerlink" title="1. 关于摸鱼"></a>1. 关于摸鱼</h1><p><strong>周五</strong></p>
+<p>上午做完了图像处理的作业，下午睡了午觉起来是两点一刻。QQ上戳了戳高冷的导师，提醒了一下下一个阶段的安排，然后等回复。无事可做的午后，本来的安排是task3和leetcode,但是可能是宿舍的温度过于舒适了叭，于是打开网页，点开了心心念念的《本杰明巴顿奇事》的电影。</p>
+<p>发现原来电影改编自菲茨杰拉德的小说，算是一个白月光作者叭，很喜欢他的《了不起的盖茨比》，还好这一部不是盖茨比那样看完心头隐隐作痛的悲剧。</p>
+<p>电影很长，2.5h，感觉是很棒的电影，娓娓道来仿佛自己也跟随黛西的叙述度过或者旁观了本杰明的一生……</p>
+<p>然后看了消息，导师还没回复😐（为什么莫名有一种🐕和它的高冷女神的既视感🤣）。</p>
+<p>遂约和狗子一起去恰晚饭顺路散步去北区羽毛球场拐角那边看猫猫~</p>
+<p>四只黑色的猫，之前都挺怕生的，这次去居然都给摸了~撸猫的快感啊哈哈</p>
+<p>一只比较活泼的，喜欢瞪着水汪汪的大眼睛，（一般这个表情就是要“拍人”了🤣），狗子伸手想rua，我看表情猫猫不对就劝阻，果然一个爪子抬了起来做出要“拍人”的手势。</p>
+<blockquote>
+<p>“这个好像就是上次十字路口那个不让碰的小黑猫哎，小心点，眼神不对了”</p>
+<p>“不会的叭，刚刚还摸到了，不会的”</p>
+<p>“……”</p>
+<p>“啊这，好像就是那只”</p>
 </blockquote>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> n<span class="token punctuation">;</span>
-vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span>v<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>	
-	v<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-		<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token function">sort</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>v<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">int</span> ans<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-	<span class="token keyword">bool</span> flag<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
-	<span class="token keyword">bool</span> one<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
-	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>one<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>flag<span class="token operator">&amp;&amp;</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token operator">&lt;</span>n<span class="token operator">&amp;&amp;</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">>=</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span>v<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-			ans<span class="token operator">=</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
-			flag<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-			<span class="token keyword">break</span><span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>flag<span class="token operator">&amp;&amp;</span>one<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-		ans<span class="token operator">=</span>v<span class="token punctuation">[</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>one<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-		ans<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>ans<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>还看见一只特别肥的黄猫，但是好胆小吖，是生面孔。</p>
+<p>明苑二楼试水了一下柠檬茶，emm,捧出来的时候我还以为是冰红茶（除了新鲜柠檬外，颜色和味道完全是”康师傅“昂！）</p>
+<p>肠粉很好恰，但是不适合夏天</p>
+<p>下次点凉面叭</p>
+<p>晚上耗尽了本周最后一个通话回家的额度，算是提前消耗完了周末😛</p>
+<p><strong>周六</strong></p>
+<p>预计是👩🏼‍💻</p>
+<p><strong>周日</strong></p>
+<p>预计还是👩🏼‍💻</p>
 
-
-
-<h2 id="2-2-第二题"><a href="#2-2-第二题" class="headerlink" title="2.2 第二题"></a>2.2 第二题</h2><blockquote>
-<p>这题难倒是不难，关键是二次探测的公式不能写错</p>
-</blockquote>
-<p><strong>学一个英文：</strong></p>
-<p>Quadratic probing (with positive increments only)<mark>二次探测（仅限正增量）</mark><br>$$<br>(temp+k*k)mod(tsize)<br>$$</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> MSize<span class="token punctuation">,</span>N<span class="token punctuation">,</span>M<span class="token punctuation">;</span>
-<span class="token keyword">bool</span> <span class="token function">isPrime</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	<span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">==</span><span class="token number">2</span><span class="token operator">||</span>x<span class="token operator">==</span><span class="token number">3</span><span class="token operator">||</span>x<span class="token operator">==</span><span class="token number">5</span><span class="token operator">||</span>x<span class="token operator">==</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-		<span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">*</span>i<span class="token operator">&lt;=</span>x<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">%</span>i<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span>hasht<span class="token punctuation">;</span>
-<span class="token keyword">int</span> temp<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>MSize<span class="token punctuation">,</span><span class="token operator">&amp;</span>N<span class="token punctuation">,</span><span class="token operator">&amp;</span>M<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isPrime</span><span class="token punctuation">(</span>MSize<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-		MSize<span class="token operator">++</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	hasht<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span>MSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">fill</span><span class="token punctuation">(</span>hasht<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>hasht<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>N<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-		<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword">bool</span> flag<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
-		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">&lt;=</span>MSize<span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-			<span class="token keyword">int</span> pos<span class="token operator">=</span><span class="token punctuation">(</span>temp<span class="token operator">+</span>k<span class="token operator">*</span>k<span class="token punctuation">)</span><span class="token operator">%</span>MSize<span class="token punctuation">;</span>
-			<span class="token keyword">if</span><span class="token punctuation">(</span>hasht<span class="token punctuation">[</span>pos<span class="token punctuation">]</span><span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-				hasht<span class="token punctuation">[</span>pos<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
-				flag<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
-				<span class="token keyword">break</span><span class="token punctuation">;</span>
-			<span class="token punctuation">&#125;</span>
-		<span class="token punctuation">&#125;</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>flag<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-			<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d cannot be inserted.\n"</span><span class="token punctuation">,</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-	<span class="token punctuation">&#125;</span>
-	<span class="token keyword">int</span> sum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>M<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-		<span class="token keyword">int</span> pre<span class="token operator">=</span>sum<span class="token punctuation">;</span>
-		<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword">int</span> k<span class="token punctuation">;</span>
-		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">&lt;=</span>MSize<span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-			sum<span class="token operator">++</span><span class="token punctuation">;</span>
-			<span class="token keyword">int</span> pos<span class="token operator">=</span><span class="token punctuation">(</span>temp<span class="token operator">+</span>k<span class="token operator">*</span>k<span class="token punctuation">)</span><span class="token operator">%</span>MSize<span class="token punctuation">;</span>
-			<span class="token keyword">if</span><span class="token punctuation">(</span>hasht<span class="token punctuation">[</span>pos<span class="token punctuation">]</span><span class="token operator">==</span>temp<span class="token operator">||</span>hasht<span class="token punctuation">[</span>pos<span class="token punctuation">]</span><span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-				<span class="token keyword">break</span><span class="token punctuation">;</span>
-			<span class="token punctuation">&#125;</span>
-		<span class="token punctuation">&#125;</span>
-		
-	<span class="token punctuation">&#125;</span>
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%.1f"</span><span class="token punctuation">,</span><span class="token keyword">double</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token operator">/</span>M<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="2-3-第三题"><a href="#2-3-第三题" class="headerlink" title="2.3 第三题"></a>2.3 第三题</h2><h2 id="2-4-第四题"><a href="#2-4-第四题" class="headerlink" title="2.4 第四题"></a>2.4 第四题</h2><h1 id="3-参考资料"><a href="#3-参考资料" class="headerlink" title="3 参考资料"></a>3 参考资料</h1>
                 
             </div>
             <hr/>
@@ -622,7 +478,7 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ghy0202.github.io/2022/01/29/pta-jia-ji-mo-ni-1144-1147/">https://ghy0202.github.io/2022/01/29/pta-jia-ji-mo-ni-1144-1147/</a>
+                    <a href="https://ghy0202.github.io/2022/04/23/yi-zhou-ri-chang-01/">https://ghy0202.github.io/2022/04/23/yi-zhou-ri-chang-01/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -660,12 +516,8 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0/">
-                                    <span class="chip bg-color">编程练习</span>
-                                </a>
-                            
-                                <a href="/tags/PTA/">
-                                    <span class="chip bg-color">PTA</span>
+                                <a href="/tags/vlog%E6%97%A5%E5%B8%B8/">
+                                    <span class="chip bg-color">vlog日常</span>
                                 </a>
                             
                         </div>
@@ -1109,13 +961,12 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/01/31/pta-jia-ji-mo-ni-1148-1151/">
+                <a href="/2022/04/23/suan-fa-kang-fu-xun-lian-09/">
                     <div class="card-image">
                         
+                        <img src="https://pic1.zhimg.com/v2-aebf8eed4f9230ec557796467eb84b4f_r.jpg?source=1940ef5c" class="responsive-img" alt="算法康复训练09">
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="PTA甲级模拟1148-1151">
-                        
-                        <span class="card-title">PTA甲级模拟1148-1151</span>
+                        <span class="card-title">算法康复训练09</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1126,7 +977,7 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-31
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-23
                         </span>
                         <span class="publish-author">
                             
@@ -1147,8 +998,8 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
                         <span class="chip bg-color">编程练习</span>
                     </a>
                     
-                    <a href="/tags/PTA/">
-                        <span class="chip bg-color">PTA</span>
+                    <a href="/tags/%E6%9C%BA%E8%80%83/">
+                        <span class="chip bg-color">机考</span>
                     </a>
                     
                 </div>
@@ -1162,13 +1013,12 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/28/pta-jia-ji-mo-ni-1140-1143/">
+                <a href="/2022/04/21/suan-fa-kang-fu-xun-lian-08/">
                     <div class="card-image">
                         
+                        <img src="https://tse1-mm.cn.bing.net/th/id/R-C.7cfc0749c7d7cb65a170cd1012e007b4?rik=ewerokyfVrY9Bw&riu=http%3a%2f%2fimg.mm4000.com%2ffile%2f7%2ff9%2fc0c1d422f5.jpg%3fdown&ehk=AOoEY85SxfLPI2F2EKcMzpy0%2fh1fA%2bntRLfstBzgju0%3d&risl=&pid=ImgRaw&r=0" class="responsive-img" alt="算法康复训练08">
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="PTA甲级模拟1140-1143">
-                        
-                        <span class="card-title">PTA甲级模拟1140-1143</span>
+                        <span class="card-title">算法康复训练08</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1179,12 +1029,16 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-21
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Gao
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -1194,6 +1048,10 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
                     
                     <a href="/tags/%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0/">
                         <span class="chip bg-color">编程练习</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%BA%E8%80%83/">
+                        <span class="chip bg-color">机考</span>
                     </a>
                     
                 </div>
