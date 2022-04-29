@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>图像处理与图像分析02</title>
+      <link href="/2022/04/29/tu-xiang-chu-li-yu-tu-xiang-fen-xi-2/"/>
+      <url>/2022/04/29/tu-xiang-chu-li-yu-tu-xiang-fen-xi-2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="图像处理第二次作业"><a href="#图像处理第二次作业" class="headerlink" title="图像处理第二次作业"></a>图像处理第二次作业</h1><blockquote><p>解答题暂时不贴了，也不知道写得对不对，就不放了，等讲解完~😇</p><p>信女愿一生荤素搭配求老师上课不要拎俺的作业“点评”🥰</p><p>实验部分粘贴一下部分结果和思路，完整的最后结课再一起放~😜</p><p>这绝对是大学里作业最多DDL最赶的一门课，你永远在即将写图像作业的路上或是正在写图像作业🧐</p><p>——“是不是啊”</p><p>但是感觉……挺奇妙的，如果所有课都这样也蛮好的，压力虽然大，但是不实操的话，真的很难体会算法的奥妙，看着一张张图片被成功编译出来真的有成就感！</p></blockquote><p>1、灰度图的均衡化</p><img src='https://raw.githubusercontent.com/Ghy0202/njust_homewaork_ai/main/图像处理ghy/Exam2/Exam2/res_data/H0202Plane_res.bmp' style='zoom:50%'><p>2、彩色转灰度</p><img src='https://raw.githubusercontent.com/Ghy0202/njust_homewaork_ai/main/图像处理ghy/Exam2/Exam2/res_data/H0201Gry_table.bmp' style='zoom:50%'><p>3、彩色均衡化</p><img src='https://raw.githubusercontent.com/Ghy0202/njust_homewaork_ai/main/图像处理ghy/Exam2/Exam2/res_data/H0201Gry_res2.bmp' style="zoom:50%"><h1 id="关于录课"><a href="#关于录课" class="headerlink" title="关于录课"></a>关于录课</h1><blockquote><p>部分网课视频~</p><p>课中课实锤🤣</p></blockquote><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=553586499&bvid=BV1Ri4y1m7Qj&cid=587088165&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" > </iframe></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 课程作业 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 图像处理 </tag>
+            
+            <tag> 理论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>算法康复训练12</title>
       <link href="/2022/04/28/suan-fa-kang-fu-xun-lian-12/"/>
       <url>/2022/04/28/suan-fa-kang-fu-xun-lian-12/</url>
@@ -35,7 +62,7 @@
       <link href="/2022/04/27/guan-yu-bu-ding-qi-de-yi-xiang-tian-kai/"/>
       <url>/2022/04/27/guan-yu-bu-ding-qi-de-yi-xiang-tian-kai/</url>
       
-        <content type="html"><![CDATA[<h1 id="四月27日：关于解封的故事"><a href="#四月27日：关于解封的故事" class="headerlink" title="四月27日：关于解封的故事"></a>四月27日：关于解封的故事</h1><p>本来想着哈，考试要么统一挪到最后要么暑假再考（毕竟年级很多人回家了），结果说是十二周开始陆陆续续考试。</p><p>一方面很开心叭，官方有个准信儿，不至于不清楚要复习本学期课程还是自己整活一些别的外加专业课回炉；另一方面自己原本的计划是照着期末统一考试来安排的，多多少少有点措手不及。</p><p>加油加油，还好这学期的老师都很nice，课都很好玩儿<del>🧐然后解封就可以出校门啦</del></p><img src='https://pic.qqtn.com/up/2016-5/2016051708513976844.gif'>]]></content>
+        <content type="html"><![CDATA[<h1 id="四月27日：关于解封的故事"><a href="#四月27日：关于解封的故事" class="headerlink" title="四月27日：关于解封的故事"></a>四月27日：关于解封的故事</h1><p>本来想着哈，考试要么统一挪到最后要么暑假再考（毕竟年级很多人回家了），结果说是十二周开始陆陆续续考试。</p><p>一方面很开心叭，官方有个准信儿，不至于不清楚要复习本学期课程还是自己整活一些别的外加专业课回炉；另一方面自己原本的计划是照着期末统一考试来安排的，多多少少有点措手不及。</p><p>加油加油，还好这学期的老师都很nice，课都很好玩儿<del>🧐然后解封就可以出校门啦</del></p><img src='https://pic.qqtn.com/up/2016-5/2016051708513976844.gif'><h1 id="四月29日：关于实验的故事"><a href="#四月29日：关于实验的故事" class="headerlink" title="四月29日：关于实验的故事"></a>四月29日：关于实验的故事</h1><p>呜呜，之前OpenCV写得人脸识别项目好像不能当作作业交了，老师重新布置了一份……事实证明当作业没有明确发布的时候，不要提前写。</p><p>一个小想法是，把之前研训的读的论文和复现的code整理一下,时间有点赶，但是应该每周抽个时间还是可以哒~</p><p>这个五一好忙吖~呼呼</p><img src='https://pica.zhimg.com/80/v2-fd0ca59906c0b0828f580b78cda55f47_720w.jpg?source=1940ef5c' style='zoom:50%'>]]></content>
       
       
       <categories>
