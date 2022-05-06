@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>行人识别系统Demo</title>
+      <link href="/2022/05/06/xing-ren-shi-bie-xi-tong-da-jian/"/>
+      <url>/2022/05/06/xing-ren-shi-bie-xi-tong-da-jian/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码不对啊哦" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="0c2f6ced23e062195edb7af7cfbab158c07871fe68a31d3b582258b927565ddd">d9b5ee6d0c20745c798cf628ead5cb71095b041523c234e03baa132a2efa9e56b38e3eb47aea5ea5a2978a5a1702b97eeddc6300457be902795cc148cb2e1286ed0aed7d96711ac552f6ae7ca916329d9300665ed73b67f346885960797b1eba8e707855fa536d84dcc985a82c4bb81d97ccb32dc3a64b3934ae2c9219b29eb3b7b1c98425a5dc0f66e62c1e0622845ccb092a01e689d94483b7974192ce0eb78a2587a3091c902fc31d8680078ce5baec848b44f251b745ade3fcde6f568a6bb8625c43110616b94a7f169cc5b33d546ce775cce4814c7a99a7ab26a911c8223c0b1d5884fdc4a9bdd10108105471443a2df2e4421f26d8adf8d8e7fff1914467f481881e73fc722b56797e720423dc8abe168f6000639b5015e9173744297392cb4460668a6a5c905434b2d8878f70264671e58e9585d486e75c5462e8ed682c74efa3193f492c0c2698e02917afa1878f01e07c4f23c0efb249e3ace471cdfd573e09aab5ca79ceca36bd739bf4f07345ce244ab8478d963edaace8dbd1daf2c9a59d263b58fe726d57525518f704b9ccf417f4ce093f8f1d88c4f776c38c618f3d9e9603ccab531126c35d198be4e4797c784629d5244972b23485897aba526603ed8b1d0afe41209629880370f9e94aa40d1521d3351b388a5ba2d0e55aeb4551afdfe45602899875e3342eacb32a0fb586efb8d7f844ea9015ec35f0d9359fdf36dc2c29dd6d8e19c056c92fe0d8cc24fd422935bf85fce2970839e5e9c1f86a4aa05110e806eabebad6999a6d601c6a084f497edfd344ae7936cc4d94450160c59bd2aa34c0af2351ee42d1b518b4bae114ffdd64aec9003758ed470511de4cf020cf0db4693b9bda22f7e1bca1f9fc214a7664ab1608622af339a0740683fe1e2ad9b8f2e3a815e77159fd0fb6fff21d29de8c3553d0c4709ddd46bf7b5849fb1a3eb257c7ac411328dfc32e80fca25b718798980e86075005370533bd1a77013ab37edd6724053655631196a1b1b6c8d6682cb24fe5343df5feefb595aea80fd02e1e14874ab94477e6f189ed239e722d729dabd5b55cba91ac269b</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">呜呜</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> AI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 模式识别 </tag>
+            
+            <tag> 课程实验 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>算法康复训练13</title>
       <link href="/2022/04/30/suan-fa-kang-fu-xun-lian-13/"/>
       <url>/2022/04/30/suan-fa-kang-fu-xun-lian-13/</url>
@@ -35,7 +62,7 @@
       <link href="/2022/04/29/tu-xiang-chu-li-yu-tu-xiang-fen-xi-2/"/>
       <url>/2022/04/29/tu-xiang-chu-li-yu-tu-xiang-fen-xi-2/</url>
       
-        <content type="html"><![CDATA[<h1 id="图像处理第二次作业"><a href="#图像处理第二次作业" class="headerlink" title="图像处理第二次作业"></a>图像处理第二次作业</h1><blockquote><p>解答题暂时不贴了，也不知道写得对不对，就不放了，等讲解完~😇</p><p>信女愿一生荤素搭配求老师上课不要拎俺的作业“点评”🥰</p><p>实验部分粘贴一下部分结果和思路，完整的最后结课再一起放~😜</p><p>这绝对是大学里作业最多DDL最赶的一门课，你永远在即将写图像作业的路上或是正在写图像作业🧐</p><p>——“是不是啊”</p><p>但是感觉……挺奇妙的，如果所有课都这样也蛮好的，压力虽然大，但是不实操的话，真的很难体会算法的奥妙，看着一张张图片被成功编译出来真的有成就感！</p></blockquote><p>1、灰度图的均衡化</p><img src='https://raw.githubusercontent.com/Ghy0202/njust_homewaork_ai/main/图像处理ghy/Exam2/Exam2/res_data/H0202Plane_res.bmp' style='zoom:50%'><p>2、彩色转灰度</p><img src='https://raw.githubusercontent.com/Ghy0202/njust_homewaork_ai/main/图像处理ghy/Exam2/Exam2/res_data/H0201Gry_table.bmp' style='zoom:50%'><p>3、彩色均衡化</p><img src='https://raw.githubusercontent.com/Ghy0202/njust_homewaork_ai/main/图像处理ghy/Exam2/Exam2/res_data/H0201Gry_res2.bmp' style="zoom:50%"><h1 id="关于录课"><a href="#关于录课" class="headerlink" title="关于录课"></a>关于录课</h1><blockquote><p>部分网课视频~</p><p>课中课实锤🤣</p></blockquote><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=553586499&bvid=BV1Ri4y1m7Qj&cid=587088165&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" > </iframe></div>]]></content>
+        <content type="html"><![CDATA[<h1 id="图像处理第二次作业"><a href="#图像处理第二次作业" class="headerlink" title="图像处理第二次作业"></a>图像处理第二次作业</h1><blockquote><p>解答题暂时不贴了，也不知道写得对不对，就不放了，等讲解完~😇</p><p>信女愿一生荤素搭配求老师上课不要拎俺的作业“点评”🥰</p><p>实验部分粘贴一下部分结果和思路，完整的最后结课再一起放~😜</p><p>这绝对是大学里作业最多DDL最赶的一门课，你永远在即将写图像作业的路上或是正在写图像作业🧐</p><p>——“是不是啊”</p><p>但是感觉……挺奇妙的，如果所有课都这样也蛮好的，压力虽然大，但是不实操的话，真的很难体会算法的奥妙，看着一张张图片被成功编译出来真的有成就感！</p></blockquote><p>1、灰度图的均衡化</p><img src='https://raw.githubusercontent.com/Ghy0202/njust_homewaork_ai/main/图像处理ghy/Exam2/Exam2/res_data/H0202Plane_res.bmp' style='zoom:50%'><p>2、彩色转灰度</p><img src='https://raw.githubusercontent.com/Ghy0202/njust_homewaork_ai/main/图像处理ghy/Exam2/Exam2/res_data/H0201Gry_table.bmp' style='zoom:50%'><p>3、彩色均衡化</p><img src='https://raw.githubusercontent.com/Ghy0202/njust_homewaork_ai/main/图像处理ghy/Exam2/Exam2/res_data/H0201Gry_res2.bmp' style="zoom:50%"><h1 id="关于插入pdf"><a href="#关于插入pdf" class="headerlink" title="关于插入pdf"></a>关于插入pdf</h1><p>试着做一下哈，讲解课因为冲突没有听，没来得及订正，仅供参考(这里主要是实验一下pdf可否正常导入)</p><div class="row">    <embed src="../pdf/919106840202Pic2.pdf" width="100%" height="550" type="application/pdf"></div><h1 id="关于录课"><a href="#关于录课" class="headerlink" title="关于录课"></a>关于录课</h1><blockquote><p>部分网课视频~</p><p>课中课实锤🤣</p></blockquote><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=553586499&bvid=BV1Ri4y1m7Qj&cid=587088165&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" > </iframe></div>]]></content>
       
       
       <categories>
@@ -89,7 +116,7 @@
       <link href="/2022/04/27/guan-yu-bu-ding-qi-de-yi-xiang-tian-kai/"/>
       <url>/2022/04/27/guan-yu-bu-ding-qi-de-yi-xiang-tian-kai/</url>
       
-        <content type="html"><![CDATA[<h1 id="四月27日：关于解封的故事"><a href="#四月27日：关于解封的故事" class="headerlink" title="四月27日：关于解封的故事"></a>四月27日：关于解封的故事</h1><p>本来想着哈，考试要么统一挪到最后要么暑假再考（毕竟年级很多人回家了），结果说是十二周开始陆陆续续考试。</p><p>一方面很开心叭，官方有个准信儿，不至于不清楚要复习本学期课程还是自己整活一些别的外加专业课回炉；另一方面自己原本的计划是照着期末统一考试来安排的，多多少少有点措手不及。</p><p>加油加油，还好这学期的老师都很nice，课都很好玩儿<del>🧐然后解封就可以出校门啦</del></p><img src='https://pic.qqtn.com/up/2016-5/2016051708513976844.gif'><h1 id="四月29日：关于实验的故事"><a href="#四月29日：关于实验的故事" class="headerlink" title="四月29日：关于实验的故事"></a>四月29日：关于实验的故事</h1><p>呜呜，之前OpenCV写得人脸识别项目好像不能当作作业交了，老师重新布置了一份……事实证明当作业没有明确发布的时候，不要提前写。</p><p>一个小想法是，把之前研训的读的论文和复现的code整理一下,时间有点赶，但是应该每周抽个时间还是可以哒~</p><p>这个五一好忙吖~呼呼</p><img src='https://pica.zhimg.com/80/v2-fd0ca59906c0b0828f580b78cda55f47_720w.jpg?source=1940ef5c' style='zoom:50%'>]]></content>
+        <content type="html"><![CDATA[<h1 id="四月27日：关于解封的故事"><a href="#四月27日：关于解封的故事" class="headerlink" title="四月27日：关于解封的故事"></a>四月27日：关于解封的故事</h1><p>本来想着哈，考试要么统一挪到最后要么暑假再考（毕竟年级很多人回家了），结果说是十二周开始陆陆续续考试。</p><p>一方面很开心叭，官方有个准信儿，不至于不清楚要复习本学期课程还是自己整活一些别的外加专业课回炉；另一方面自己原本的计划是照着期末统一考试来安排的，多多少少有点措手不及。</p><p>加油加油，还好这学期的老师都很nice，课都很好玩儿<del>🧐然后解封就可以出校门啦</del></p><img src='https://pic.qqtn.com/up/2016-5/2016051708513976844.gif'><h1 id="四月29日：关于实验的故事"><a href="#四月29日：关于实验的故事" class="headerlink" title="四月29日：关于实验的故事"></a>四月29日：关于实验的故事</h1><p>呜呜，之前OpenCV写得人脸识别项目好像不能当作作业交了，老师重新布置了一份……事实证明当作业没有明确发布的时候，不要提前写。</p><p>一个小想法是，把之前研训的读的论文和复现的code整理一下,时间有点赶，但是应该每周抽个时间还是可以哒~</p><p>这个五一好忙吖~呼呼</p><img src='https://pica.zhimg.com/80/v2-fd0ca59906c0b0828f580b78cda55f47_720w.jpg?source=1940ef5c' style='zoom:50%'><h1 id="五月3日：关于建模以及课设答辩的故事"><a href="#五月3日：关于建模以及课设答辩的故事" class="headerlink" title="五月3日：关于建模以及课设答辩的故事"></a>五月3日：关于建模以及课设答辩的故事</h1><p>应该是第一次也是最后一次参加五一赛了，算是为大学的建模生涯画上一个小小的<code>。</code></p><p>选题上选了数据类的题，结果三天作为编程手都在撸代码，算了一下不多不少加上数据处理有小千行，本来想划划水叭，接下来还有操作系统的考试，但是也不知道咋回事就是觉得想做了就能力范围内尽量做，于是有了三天完全没看课本复习的我自己。</p><p>遗憾的是没有选到物理类的题，队友的才华没法显现啊哈哈哈，有点担心自己调参水平尚且弱小，数据类的题目不是我们队强项……</p><p>嗯，唯一欣慰的是又（为什么要说又🤣）复习了一次LSTM，<code>nan</code>死磕了一晚上才发现不是forward的问题，而是输入数据有空值，真的一言难尽😇</p><p>嗷嗷，中途编译原理课设答辩，因为很早之前就基本写完了，上周补了一下task3,然后离谱的是我的程序用vscode写，后来为了中文输出改了编码，结果注释就全变成乱码，被老师当场质疑是否独立完成……😤好冤枉，好在博客记录了一些，并且报告文档详尽，小小骄傲一下共享屏幕的时候打开博客证明清白的一瞬间，原本有点“凶凶”的老师立马温油起来，然后说“好的，知道了，蛮好，下一个”！！！哇哇哇，原来不务正业也可以关键的时候救命哎！</p><p>但是希望之后看到的学弟学妹不要着急写完课设，不然真的自己一行行敲得代码答辩的时候也会忘记一些技术细节（最好前一晚看一下）😄</p><h1 id="五月4日：学校发的餐券以及早饭-午饭"><a href="#五月4日：学校发的餐券以及早饭-午饭" class="headerlink" title="五月4日：学校发的餐券以及早饭=午饭"></a>五月4日：学校发的餐券以及早饭=午饭</h1><p>昨天建模建到两点回的宿舍，今天早上录课完之后洗了衣服，下去吃“早饭”的时间是12点整。五四快乐！餐券用在了心心念念的小笼包上哈哈哈~</p><img src='https://img.zcool.cn/community/01f3035aebd62aa801207fa1313fa0.jpg@1280w_1l_2o_100sh.jpg' style='zoom:20%'>]]></content>
       
       
       <categories>
