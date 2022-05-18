@@ -410,21 +410,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-17
+                    2022-05-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    674
+                    988
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -459,6 +459,16 @@
 </tr>
 </thead>
 <tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lru-cache/">LRU缓存</a></td>
+<td>STL容器，机试应该不怎会遇到，但是class确实写得少，练练不为过~<mark>之后回锅不需要反驳</mark></td>
+<td>🐸🐸</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/linked-list-cycle-ii/">环形链表</a></td>
+<td>链表</td>
+<td>🐸</td>
+</tr>
+<tr>
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/word-break/">单词拆分</a></td>
 <td>DP<mark>之后回锅不需要反驳</mark></td>
 <td>🐸🐸😇</td>
@@ -572,8 +582,36 @@
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="2-3-环形链表"><a href="#2-3-环形链表" class="headerlink" title="2.3 环形链表"></a>2.3 环形链表</h2><blockquote>
+<p>因为给了数据的范围所以可以<code>inf</code>给遍历过的数据做标记，但这种解法适合考试不适合工程，相当于修改了用户数据了哈，虽然可耻但是有用（比官方的哈希快很多）</p>
+<p>执行用时：0 ms, 在所有 C++ 提交中击败了100.00%的用户</p>
+<p>内存消耗：7.6 MB, 在所有 C++ 提交中击败了23.74%的用户</p>
+</blockquote>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> inf<span class="token operator">=</span><span class="token number">80000000</span><span class="token punctuation">;</span>
+    ListNode <span class="token operator">*</span><span class="token function">detectCycle</span><span class="token punctuation">(</span>ListNode <span class="token operator">*</span>head<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        ListNode<span class="token operator">*</span> p<span class="token operator">=</span>head<span class="token punctuation">;</span>
+        ListNode<span class="token operator">*</span> pre<span class="token operator">=</span>p<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">-></span>val<span class="token operator">>=</span>inf<span class="token operator">-</span><span class="token number">1e5</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">//这里的判别注意一下，需要有范围的，如果题干不给范围就凉凉哈~</span>
+                p<span class="token operator">-></span>val<span class="token operator">=</span>p<span class="token operator">-></span>val<span class="token operator">-</span>inf<span class="token punctuation">;</span>
+                <span class="token comment">//cout&lt;&lt;p->val;</span>
+                <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            p<span class="token operator">-></span>val<span class="token operator">=</span>p<span class="token operator">-></span>val<span class="token operator">+</span>inf<span class="token punctuation">;</span>
+            pre<span class="token operator">=</span>p<span class="token punctuation">;</span>
+            p<span class="token operator">=</span>p<span class="token operator">-></span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
+<h2 id="2-4-LRU-缓存"><a href="#2-4-LRU-缓存" class="headerlink" title="2.4 LRU 缓存"></a>2.4 LRU 缓存</h2><blockquote>
+<p>我能说今天操作系统出分我还沉浸在悲伤中咩😓，想起了仓促复习的窘迫和出分的emmm</p>
+</blockquote>
+<p>……时间到，STL的优先队列和运算符重载不熟练鉴定完毕，<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lru-cache/solution/lruhuan-cun-ji-zhi-by-leetcode-solution/">题解</a>贴一下，下次补上</p>
 <h1 id="3-参考资料"><a href="#3-参考资料" class="headerlink" title="3. 参考资料"></a>3. 参考资料</h1><p>单词拆分的官方题解</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
@@ -1408,7 +1446,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">58.8k</span>
+                        class="white-color">59.4k</span>
             
             
             
