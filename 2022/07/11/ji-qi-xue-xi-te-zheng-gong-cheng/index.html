@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="机器学习-特征工程, 理想国的糕">
-    <meta name="description" content="">
+    <meta name="description" content="对于一个机器学习问题，数据和特征往往决定了结果的上限，而模型、算法的选择应优化则是在逐步接近这个上限。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -247,7 +247,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/20200322123029221.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzUyNg==,size_16,color_FFFFFF,t_70')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -372,12 +372,33 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%90%86%E8%AE%BA/">
+                                <span class="chip bg-color">理论</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/AI/" class="post-category">
+                                AI
+                            </a>
+                        
+                            <a href="/categories/AI/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -400,14 +421,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    884
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -430,7 +451,57 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="1-特征归一化"><a href="#1-特征归一化" class="headerlink" title="1. 特征归一化"></a>1. 特征归一化</h1><p><strong>1.为什么需要对数值类型的特征做归一化？</strong></p>
+<ul>
+<li>为了消除数据特征之间的量纲的影响，我们需要做归一化处理，使得不同的指标之间具有可比性。</li>
+<li>以梯度下降为例，不同指标的更新速度变得更为一致，容易更快地通过梯度下降找到最优解。</li>
+</ul>
+<p><strong>2.说说你了解的归一化的方法？</strong></p>
+<p>（1）线性函数归一化（Min-Max Scaling）：对原始数据进行线性变换，结果映射到[0,1]范围$X_{norm}=\frac{X-X_{min}}{X_{max}-X_{min}}$</p>
+<p>（2）零均值归一化（Z-Score Normalization）：将原始数据映射到均值为0，标准差为1的分布上，假设原始均值为$\mu$，标准差为$\sigma$则归一化的公式定义为$z=\frac{x-\nu}{\sigma}$</p>
+<p>**3.什么模型用归一化比较多？ **</p>
+<p>通过梯度下降求解的模型通常需要归一化的，包括线性回归、逻辑回归、支持向量机、神经网络等模型，但是对于决策树模型等并不适用（决策树主要是考虑信息增益比，而这个和特征是否归一化无关）。</p>
+<h1 id="2-类别型特征"><a href="#2-类别型特征" class="headerlink" title="2. 类别型特征"></a>2. 类别型特征</h1><p><code>注：</code>类别型特征主要是指诸如性别（男，女）、血型（A、B、AB、O）等，通常是以字符串的形式。除了决策树等少数树模型可以直接处理字符串形式的输入，对于逻辑回归、支持向量机等模型，类别特征必须经过处理转换成数值特征才能正确工作。</p>
+<p><strong>1.在对数据进行预处理的时候，应该怎样处理类别特征？</strong></p>
+<ul>
+<li>序号编码：类别之间具有大小关系</li>
+<li>独热编码：类别之间无大小关系</li>
+<li>二进制编码：先给每一类一个ID再映射成二进制编码（节省空间，哈希映射）</li>
+</ul>
+<h1 id="3-高维组合特征的处理"><a href="#3-高维组合特征的处理" class="headerlink" title="3. 高维组合特征的处理"></a>3. 高维组合特征的处理</h1><p><strong>1.什么是组合特征？如何处理高维组合特征？</strong></p>
+<p>为了提高复杂关系的拟合能力，在恃征工程中经常会把一阶离散特征两两组合，构成高阶组合特征；</p>
+<p>处理方法：用低维向量表示：$Y=sigmoid(\sum_{i}\sum_{j}w_{ij}&lt;x_i,x_j&gt;)$</p>
+<h1 id="4-组合特征"><a href="#4-组合特征" class="headerlink" title="4. 组合特征"></a>4. 组合特征</h1><p><strong>1.怎样有效地找到组合特征？</strong></p>
+<p><u>梯度提升决策树</u></p>
+<h1 id="5-文本表示模型"><a href="#5-文本表示模型" class="headerlink" title="5. 文本表示模型"></a>5. 文本表示模型</h1><p><strong>1.文本表示模型有哪些？他们各自的优缺点？</strong></p>
+<ul>
+<li>词袋模型和N-gram模型</li>
+<li>主题模型</li>
+<li>词嵌入模型和深度学习模型</li>
+</ul>
+<h1 id="6-word2Vec"><a href="#6-word2Vec" class="headerlink" title="6. word2Vec"></a>6. word2Vec</h1><h1 id="7-图像数据不足时的处理方法"><a href="#7-图像数据不足时的处理方法" class="headerlink" title="7. 图像数据不足时的处理方法"></a>7. 图像数据不足时的处理方法</h1><p><strong>1.在图像分类任务中，训练数据不足会带来什么样的问题？如何缓解数据量不足带来的问题？</strong></p>
+<p>具体到国像分类任务上，训练数据不足带来的问题主要表现在过拟合方面，即模型在训练样本上的效果可能不错 但在测试集上的泛化效果不佳。</p>
+<p>解决方法：</p>
+<hr>
+<ul>
+<li><p>简化模型</p>
+</li>
+<li><p>添加约束项缩小假设空间（L1/L2正则项）</p>
+</li>
+<li><p>集成学习</p>
+</li>
+<li><p>dropout超参数等等</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>数据扩充：，即根据 些先验知识 在保持特定信息的前提下 对原始数据进行适当变换以达到扩充数据集的效果。</li>
+<li>具体到图像：随机旋转、平移缩放、裁剪……</li>
+<li>颜色变换</li>
+<li>高斯噪声、椒盐噪声</li>
+<li>亮度、清晰度、对比度、锐度等</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -493,7 +564,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E7%90%86%E8%AE%BA/">
+                                    <span class="chip bg-color">理论</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                    <span class="chip bg-color">面试</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -931,39 +1010,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/07/11/ji-qi-xue-xi-te-zheng-gong-cheng/">
+                <a href="/2022/07/11/suan-fa-xun-lian-26/">
                     <div class="card-image">
                         
+                        <img src="https://bpic.588ku.com/back_pic/05/99/56/145f6429bc89c50.jpg" class="responsive-img" alt="算法训练26">
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="机器学习-特征工程">
-                        
-                        <span class="card-title">机器学习-特征工程</span>
+                        <span class="card-title">算法训练26</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            第七次模拟考试
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-11
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-11
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Gao
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0/">
+                        <span class="chip bg-color">编程练习</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%BA%E8%80%83/">
+                        <span class="chip bg-color">机考</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1144,6 +1236,13 @@
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
+
 
 
     <footer class="page-footer bg-color">
@@ -1216,7 +1315,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">75.9k</span>
+                        class="white-color">78.5k</span>
             
             
             
